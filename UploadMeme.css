@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap');
+
+body {
+    background-image: url('https://i.imgur.com/X20ii9K.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+.container {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.MemeImages{
+    max-width: 430px;
+    max-height: 400px;
+}
+.blog-post {
+    background-color: #fff;
+    box-shadow: 0px 1px 2px rgba(50, 50, 50, .1),
+    0px 2px 4px rgba(60, 60, 60, 0.1);
+    border-radius: 4px;
+    padding: 40px;
+    margin: 20px 0;
+}
+.title {
+     margin: 0;
+ }
+
+.text {
+    color: #555;
+    margin: 20px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.user-info span {
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.loading {
+    opacity: 0;
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity .3s ease-in;
+}
+
+.loading.show {
+    opacity: 1;
+}
+.DelButton{
+    position: relative;
+    left: 60%;
+}
+.ball {
+    background-color: #777;
+    border-radius: 50%;
+    margin: 5px;
+    height: 10px;
+    width: 10px;
+    animation: jump .5s ease-in infinite;
+}
+
+.ball:nth-of-type(2) {
+    animation-delay: 0.1s;
+}
+
+.ball:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.UserName{
+    position: absolute;
+    right: 20px;
+}
+.UserLogo{
+    position: absolute;
+    transform: scale(0.06);
+    right: -360px;
+    top: -370px;
+
+}
+
+.UserInteraction{
+    position: relative;
+    left: 93%;
+    top: -200px;
+}
+
+.UIaPos{
+    position: absolute;
+}
+body {
+    background-color: #fafafa;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 100px;
+}
+.dropzone {
+    border: 2px dashed #ccc;
+    height: 50px;
+    position: absolute;
+    width: 300px;
+    background-color: #f9f9f9;
+    left: 60px;
+}
+.dropzone p {
+    margin: 0%;
+    text-align: center;
+    width: 100%
+}
+.dropzone.dropzone-dragging {
+    border-color: #000
+}
+
+.UploadFormImg {
+    position: absolute;
+    top: 160px;
+    left: 50px;
+}
+.info {
+    position: absolute;
+    font-size: 15px;
+    left:60px;
+    top: 7px;
+}
+
+
+.input {
+    height: 100%;
+    left: 0;
+    outline: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+#Titel{
+    position:absolute;
+    left: 200px;
+    width: 300px;
+    transform: scale(1.6);
+}
+#MemeLink{
+    position: absolute;
+    font-size: 13px;
+    top: 220px;
+    left: 110px;
+    text-align: right;
+}
+.Submit{
+    transform: scale(1.6);
+    background-color: #3e8e41;
+    position: absolute;
+    left: 310px;
+    width: 100px;
+    top: 270px;
+}
+.Share{
+    position: absolute;
+    top: 220px;
+    left: 80px;
+    text-align: right;
+}
+
+
+.UserName{
+    position: absolute;
+    right: 20px;
+}
+.UserLogo{
+    position: absolute;
+    transform: scale(0.06);
+    right: -360px;
+    top: -370px;
+}
+
+.MyMemes{
+    position: absolute;
+    left: 700px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+}
+
+.BlueSwitch{
+    position: absolute;
+    top: 210px;
+    left: 500px;
+    transform: scale(0.5);
+}
+.PubPriv{
+    position: absolute;
+    top: 215px;
+    left: 463px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.spracheingabe{
+    position: absolute;
+    left: 600px;
+}
+.Dictate{
+    height: 27px;
+
+}

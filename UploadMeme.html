@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload your Meme here</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="UploadMeme.css">
+</head>
+<body>
+    <nav>
+        <ul id="M5">
+            <a href="index.html">Home</a>
+            <a href="Browse.html">Browse</a>
+            <a href="SingleView.html">Single View</a>
+            <a href="MeemeGen.html">MemeGenerator</a>
+            <a href="UploadMeme.html">Upload</a>
+        </ul>
+    </nav>
+
+    <a id="UserName5" class="UserName"></a>
+    <img src="./data/UserLogo.png" class="UserLogo">
+
+    <h1>Upload and share your Memes here!</h1>
+
+    <input id="Titel" placeholder="Input the Meme Titel here">
+    <div class="spracheingabe">
+        <button class="Dictate" onclick="Dictate()">🎤</button> <span id="action"></span>
+    </div>
+    <button class="Submit" onclick="Submit()">Submit</button>
+
+    <div class ="UploadFormImg">
+        <div class="dropzone">
+            <div class="info"></div>
+        </div>
+    </div>
+    <a href="#" id="MemeLink">Your link will appear here.</a> <button class="Share" style="font-size:12px" onclick="CopyClip()"> <i class="fa fa-share-alt"></i></button>
+
+    <div class="MyMemes" id="container">
+        <h2>Your Previous Memes:</h2>
+
+    </div>
+
+    <div class="loading">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+    <a class = "PubPriv">Public &nbsp &nbsp &nbsp &nbsp &nbsp Private</a>
+    <div class ="BlueSwitch">
+        <label class="switch">
+            <input id="pub" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+
+    <script type="text/javascript" src="UploadMeme.js"></script>
+    <script type="text/javascript" src="_imgurConnect.js"></script>
+    <script type="text/javascript" src="_imgurUploadMemes.js"></script>
+</body>
+</html>

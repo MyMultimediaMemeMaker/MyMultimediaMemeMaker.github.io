@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Multi Media 2020 - Meme Website</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<nav>
+    <ul id="M1">
+        <a href="index.html">Home</a>
+        <a href="Browse.html">Browse</a>
+        <a href="SingleView.html">Single View</a>
+
+    </ul>
+
+</nav>
+
+
+<a id="UserName1" class="UserName"></a>
+<img src="./data/UserLogo.png" class="UserLogo">
+
+
+
+<h1> Welcome to MyMultiMediaMemeMaker</h1>
+<h3> A project for the Online Multi Media 2020/21 course - Developed by Christian, Florian, Ludwig and Szilvia </h3>
+<p>If you are signed in, you have more options.</p>
+<button onclick="SignUpForm()" id="LO1">Sign Up</button>  <button onclick="SignInForm()" id="LO2">Sign In</button>  <button onclick="signOut()" id="LI">Sign out</button>
+<br>
+<br>
+<div class="Form" id="SignUp">
+    <h1>Sign Up</h1>
+    <h3> Please do not use any serious Data or Passwords. They are saved non-encrypted!</h3>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <div class="Angaben">
+        <label for="Name"><b>  Name</b></label>
+        <input type="text" id="name" placeholder="Enter Name" name="name" required>
+        <br>
+        <label ><b>  Email</b></label>
+        <input type="text" id="mail" placeholder="Enter Email" name="email" required>
+        <br>
+        <label ><b>  Password</b></label>
+        <input type="password" id="pw" placeholder="Enter Password" name="psw" required>
+        <br>
+        <label ><b>  Repeat Password</b></label>
+        <input type="password" id="pwrep" placeholder="Repeat Password" name="psw-repeat" required>
+        <br>
+        <br>
+        <div class="clearfix">
+            <button type="button" onclick="cancel()" class="cancelbtn">Cancel</button>
+            <button type="submit" onclick="SignUp()" class="signupbtn">Sign Up</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="Form" id="SignIn">
+    <h1>Sign In</h1>
+    <p>Please fill in this form to sign into your account.</p>
+    <hr>
+    <div class="Angaben">
+        <label ><b>  Email</b></label>
+        <input type="text" id="mailL" placeholder="Enter Email" name="email" required>
+        <br>
+        <label ><b>  Password</b></label>
+        <input type="password" id="pwL" placeholder="Enter Password" name="psw" required>
+        <br>
+        <br>
+        <div class="clearfix">
+            <button type="button" onclick="cancel()" class="cancelbtn">Cancel</button>
+            <button type="submit" onclick="SignIn()" class="signupbtn">Sign In</button>
+        </div>
+    </div>
+
+</div>
+<script src="index.js"></script>
+
+</body>
+</html>

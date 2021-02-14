@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <title>Just Memes</title>
+    <link rel="stylesheet" href="SingleView.css">
+</head>
+<body>
+<nav>
+    <ul id="M3">
+        <a href="index.html">Home</a>
+        <a href="Browse.html">Browse</a>
+        <a href="SingleView.html">Single View</a>
+
+    </ul>
+</nav>
+
+<a id="UserName3" class="UserName"></a>
+<img src="./data/UserLogo.png" class="UserLogo">
+
+<h1>Focus on one meme at a time</h1>
+<h3>No distractions - just memes</h3>
+<div class="FilterPlace">
+    <button onclick="FilterMenu()">Filter ᗊ</button>
+    <a class="Filtered" id="FT"> Test <button class="FilteredX" onclick="RemFilter('Filter')">x</button></a>
+    <a class="Filtered" id="FDU"> Date △ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <a class="Filtered" id="FDD"> Date ▽ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <a class="Filtered" id="FL"> Likes <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <div class="FilterAuswahl" id="FilterAuswahl">
+        Filter: <input class="FilterInput" id="TextFilter" onchange="addFilter('Filter')"><p></p>
+        <button class="FilterButton" onclick="addFilter('SL')">Sort by Likes</button> <p></p>
+        <button class="FilterButton" onclick="addFilter('SDN')">Sort by Date (new)</button> <p></p>
+        <button class="FilterButton" onclick="addFilter('SDO')">Sort by Date (old)</button>
+    </div>
+</div>
+
+
+<div class ="MemeContainer">
+    <div class="UserInteraction" id="UserInteraction">
+        <div class="UIaPos">
+            <button class="Vote" id="UpV" onclick=VoteUp()>▲</button>
+            <a class="VoteS" id="UpS" >▲</a>
+            <p id="LikeNumber">+120</p>
+            <button class="Vote"  id="DownV" onclick=VoteDown()>▼</button>
+            <a class="VoteS"  id="DownS" >▼</a>
+            <div class="Red"></div>
+            <div class="Green" id="Green"></div>
+        </div>
+    </div>
+    <div id="MemeTitel">Hier steht der Titel des Memes</div>
+    <div class="Image">
+        <img id="currentImg" src="https://site.groupe-psa.com/content/uploads/sites/9/2016/12/white-background-2-768x450.jpg">
+    </div>
+
+    <div id="ErstellInfos"> Max Mustermann - 1. Jan 2021 </div>
+
+</div>
+
+<button class="Vorlesen" onclick="ReadTitel()">🔊</button>
+
+<div class ="Buttons">
+    <button class="SlideshowButton" id="prev" onclick="PrevImg()"> Previous</button>
+    <button class="SlideshowButton" id ="nextAp" onclick="AutoPlay()"> Autoplay </button>
+    <button class="SlideshowButton" id ="stopAp" onclick="stopAuto()"> Stop </button>
+    <input type = "number" id="timer" value="4"  min="1" >
+    <a class="randomize">Random<input id="RandomCheck" type="checkbox">  </a>
+    <button class="SlideshowButton" id ="next" onclick="NextImg()"> Next</button>
+
+</div>
+
+<script src="SingleView.js"></script>
+
+</body>
+</html>

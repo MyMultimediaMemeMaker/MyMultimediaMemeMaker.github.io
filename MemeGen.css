@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap');
+
+body {
+    background-image: url('https://i.imgur.com/X20ii9K.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #fafafa;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 100px;
+}
+
+.MemeImageClass{
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+    position: absolute;
+
+}
+
+/*Meme Text */
+.topInput, .bottomInput, .middleInput{
+    position: absolute;
+    left: 650px;
+    top: 13px;
+    width: 500px;
+}
+.Textinput{
+    width: 300px;
+}
+.Foramt{
+    width: 25px;
+}
+.bottomInput{
+    top: 293px;
+}
+.middleInput{
+    top:173px;
+}
+.MemeTextBottom, .MemeTextTop, .MemeTextMiddle{
+    left: 100px;
+    width: 400px;
+    position: absolute;
+    font-family: Verdana;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    top:105px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+.MemeTextBottom{
+
+    top: 235px;
+
+}
+.MemeTextTop{
+    top: -20px;
+}
+
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: 0px;
+}
+
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Text buttons */
+.topText, .bottomText, .midText {
+    padding: 0px 8px;
+    color: forestgreen;
+    border: 1px solid gray;
+    font-weight: normal;
+    font-size: 22px;
+    transition: 0.6s ease;
+    user-select: none;
+
+}
+.topTextRemove, .bottomTextRemove, .midTextRemove {
+
+    padding: 0px 10px;
+    color: darkred;
+    border: 1px solid gray;
+    font-weight: normal;
+    font-size: 22px;
+    transition: 0.6s ease;
+    user-select: none;
+
+}
+/* Position the "top button" to the top right */
+.topText, .topTextRemove {
+    position: absolute;
+    left: 610px;
+    top: 10px;
+
+    border-radius: 3px 3px 3px 3px;
+
+}
+
+.midText, .midTextRemove{
+    position: absolute;
+    left: 610px;
+    top: 170px;
+
+    border-radius: 3px 3px 3px 3px;
+}
+
+/* Position the "bottom button" to the bottom right */
+.bottomText, .bottomTextRemove {
+    position: absolute;
+    left: 610px;
+    top: 290px;
+
+    border-radius: 3px 3px 3px 3px;
+
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.bottomText:hover, .topText:hover, .midText:hover {
+    background-color: lightgreen;
+}
+.bottomTextRemove:hover, .topTextRemove:hover, .midTextRemove:hover {
+    background-color: lightcoral;
+}
+
+/* Auswahlmenü */
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    top: 347px;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content, .dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 260px;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content2{
+    min-width: 400px;
+}
+    /* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content2 p {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    line-height: 0px;
+
+}
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #DDDDDD}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropdown-content2 {
+    display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+#TitelZeile{
+    position: absolute;
+    top: 400px;
+    left: 100px;
+    width: 400px;
+    font-size: 20px;
+    font-style: oblique;
+}
+
+.CreateButton{
+    position: absolute;
+    width: 100px;
+    top:440px;
+    left: 400px;
+    font-size: 20px;
+    font-style: oblique;
+    background-color: lightgreen;
+}
+.CreateButton:hover{
+
+    background-color: forestgreen;
+}
+
+.BackI{
+    max-height: 340px;
+    max-width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Background-Image{
+    width: 600px;
+    position: absolute;
+    margin: auto;
+    z-index:-1;
+
+}
+
+.UploadButton{
+    position: absolute;
+    padding: 5px 5px;
+    border: 1px solid gray;
+    font-family: sans-serif;
+    font-size: 14px;
+    transition: 0.6s ease;
+    user-select: none;
+    border-radius: 3px 3px 3px 3px;
+    left: 320px;
+    width: 145px;
+}
+
+.UploadButton:hover {
+    background-color: lightgray;
+}
+
+
+.ImageGalerie{
+    width:1200px ;
+    position: absolute;
+    left: 10px;
+    top: 400px;
+}
+
+.GaleryPic{
+    max-height: 150px;
+}
+
+
+.GaleryPic:hover{
+    transform: scale(1.1);
+}
+
+.InputURL, .ImgTitel{
+    position: absolute;
+    width: 300px;
+}
+
+.ImgTitel{
+    top: 30px;
+}
+
+.UploadFormURL, .UploadFormImg, .UploadFormScreenshot{
+    position: absolute;
+    top: 400px;
+    left: 50px;
+}
+.NextImages, .PreviousImages{
+    position: absolute;
+    top: 550px;
+    left: 500px;
+}
+.PreviousImages {
+    left: 300px;
+}
+
+/*Upload Window*/
+.title {
+
+    text-align: center;
+}
+
+.dropzone {
+    border: 2px dashed #ccc;
+    height: 50px;
+    position: absolute;
+    width: 300px;
+}
+
+.info {
+    position: absolute;
+    font-size: 15px;
+    left:60px;
+    top: 7px;
+}
+
+.dropzone p {
+    margin: 0%;
+    text-align: center;
+    width: 100%
+}
+
+.input {
+    height: 100%;
+    left: 0;
+    outline: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.status {
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-url {
+    width: 50%;
+}
+
+#url{
+    font-size: 15px;
+}
+
+.dropzone.dropzone-dragging {
+    border-color: #000
+}
+
+.loading-modal {
+    background-color: rgba(255, 255, 255, .8);
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%
+}
+
+.loading-table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+.img {
+    width: 100%;
+}
+.UserName{
+    position: absolute;
+    right: 20px;
+}
+.UserLogo{
+    position: absolute;
+    transform: scale(0.06);
+    right: -360px;
+    top: -370px;
+}
+
+.info1, .info2, .info3, .info4, .info5, .info6{
+    position: absolute;
+    top: 122px;
+}
+.info1{
+    left: 5px;
+}
+.info2{
+    left: 160px;
+}
+.info3{
+    left: 315px;
+}
+.info4{
+    left: 467px;
+}
+.info5{
+    left: 620px;
+}
+.info6{
+    left: 775px;
+}
+
+.Infos{
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 1000px;
+    padding: 10px;
+    width: 400px;
+}
+
+.xbutton{
+    position: absolute;
+    right: 10px;
+}
+
+#markerbounds, #markerbounds2 {
+    margin: auto;
+    position: relative;
+}
+
+#box, #box2 {
+    margin: auto;
+    background-color: lightsteelblue;
+    position: absolute;
+}
+
+#marker, #marker2 {
+    position: relative;
+    background-color: darkblue;
+    border-radius: 100px;
+}
+
+#coord, #coord2 {
+    position: absolute;
+    left: 30px;
+}
+#widget, #widget2{
+    position: absolute;
+    left: 300px;
+}
+.scaleText{
+    position: absolute;
+    left: 260px;
+    top: 134px;
+}
+.FontSizeSlider{
+    transform: rotate(-90deg);
+}
+.sliderpos{
+    position: absolute;
+    transform: scale(0.7);
+    left:220px;
+    top: 70px;
+}
+.SpeechControl{
+    position: absolute;
+    z-index: -2;
+    left: 465px;
+    width: 500px;
+}
+
+

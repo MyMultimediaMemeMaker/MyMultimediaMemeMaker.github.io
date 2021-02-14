@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse</title>
+    <link rel="stylesheet" href="Browse.css">
+</head>
+<body>
+<nav>
+    <ul id="M2">
+        <a href="index.html">Home</a>
+        <a href="Browse.html">Browse</a>
+        <a href="SingleView.html">Single View</a>
+    </ul>
+</nav>
+
+
+<a id="UserName2" class="UserName"></a>
+<img src="./data/UserLogo.png" class="UserLogo">
+
+<h1>Browse through all the memes</h1>
+<div class="FilterPlace">
+    <button onclick="FilterMenu()">Filter ᗊ</button>
+    <a class="Filtered" id="FT"> Test <button class="FilteredX" onclick="RemFilter('Filter')">x</button></a>
+    <a class="Filtered" id="FDU"> Date △ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <a class="Filtered" id="FDD"> Date ▽ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <a class="Filtered" id="FL"> Likes <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <div class="FilterAuswahl" id="FilterAuswahl">
+        Filter: <input class="FilterInput" id="TextFilter" onchange="addFilter('Filter')"><p></p>
+        <button class="FilterButton" onclick="addFilter('SL')">Sort by Likes</button> <p></p>
+        <button class="FilterButton" onclick="addFilter('SDN')">Sort by Date (new)</button> <p></p>
+        <button class="FilterButton" onclick="addFilter('SDO')">Sort by Date (old)</button>
+    </div>
+</div>
+
+<div class="container" id="container">
+    <!--<div class="blog-post"></div>-->
+</div>
+
+<div class="loading">
+   <div class="ball"></div>
+   <div class="ball"></div>
+   <div class="ball"></div>
+</div>
+
+<script src="Browse.js"></script>
+
+</body>
+</html>

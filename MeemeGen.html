@@ -11,9 +11,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
+<!-- Navigationsmenü -->
 <nav>
     <ul id="M4">
-        <a href="index.html">Home</a>
+        <a href="index.html">Home</a> &nbsp&nbsp&nbsp
+        <a href="help.html">Help</a>&nbsp&nbsp&nbsp
         <a href="Browse.html">Browse</a>
         <a href="SingleView.html">Single View</a>
         <a href="MeemeGen.html">MemeGenerator</a>
@@ -22,18 +24,21 @@
     </ul>
 </nav>
 
-
+<!-- User Informationen -->
 <a id="UserName4" class="UserName"></a>
 <img src="./data/UserLogo.png" class="UserLogo">
 
+<!-- Überschrift -->
 <h1>Meme Generator</h1>
 
-
+<!-- Hauptcontainer des Meme Generators. -->
 <div class="slideshow-container">
 
+    <!--Drei Eingaben: Oben, Mitte und Unten mit jeweils: 1. Texteingabefeld, 2. Formatierungsoptionen (Bold, Italic, Unterstrichen und Farbe), 3. Skalierung in Größe und Position (nur Top und Bottom Text) -->
+    
     <div class="topInput">
         <input id="input1" class="Textinput" type="text" oninput="updateTopText()">
-        <button class="Foramt" style="font-weight:bold;" onclick="Bold(1)">B</button> <button class="Foramt" style="font-style: italic;" onclick="Italic(1)">I</button> <button class="Foramt" style="text-decoration: underline" onclick="UL(1)">U</button>
+        <button class="Format" style="font-weight:bold;" onclick="Bold(1)">B</button> <button class="Format" style="font-style: italic;" onclick="Italic(1)">I</button> <button class="Format" style="text-decoration: underline" onclick="UL(1)">U</button>
         <input type="color" oninput="document.getElementById('MemeTextOben').style.color = this.value">
 
         <div id="widget">
@@ -51,13 +56,13 @@
     </div>
     <div class="middleInput">
         <input id="input3" class="Textinput" type="text" oninput="updateMiddleText()" >
-        <button class="Foramt" style="font-weight:bold;" onclick="Bold(3)">B</button> <button class="Foramt" style="font-style: italic;" onclick="Italic(3)">I</button> <button class="Foramt" style="text-decoration: underline" onclick="UL(3)">U</button>
+        <button class="Format" style="font-weight:bold;" onclick="Bold(3)">B</button> <button class="Format" style="font-style: italic;" onclick="Italic(3)">I</button> <button class="Format" style="text-decoration: underline" onclick="UL(3)">U</button>
         <input type="color" oninput="document.getElementById('MemeTextMitte').style.color = this.value">
 
     </div>
     <div class="bottomInput">
         <input id="input2" class="Textinput" type="text" oninput="updateBottomText()" >
-        <button class="Foramt" style="font-weight:bold;" onclick="Bold(2)">B</button> <button class="Foramt" style="font-style: italic;" onclick="Italic(2)">I</button> <button class="Foramt" style="text-decoration: underline" onclick="UL(2)">U</button>
+        <button class="Format" style="font-weight:bold;" onclick="Bold(2)">B</button> <button class="Format" style="font-style: italic;" onclick="Italic(2)">I</button> <button class="Format" style="text-decoration: underline" onclick="UL(2)">U</button>
         <input type="color" oninput="document.getElementById('MemeTextUnten').style.color = this.value">
         <div id="widget2">
             <div id="markerbounds2">
@@ -73,26 +78,31 @@
         </div>
     </div>
 
-    <div class="MemeImageClass" id="Meme">
-        <div class="MemeTextBottom">
-            <p id="MemeTextUnten"></p>
-        </div>
-        <div class="MemeTextTop">
-            <p id="MemeTextOben"></p>
-        </div>
-        <div class="MemeTextMiddle">
-            <p id="MemeTextMitte"></p>
-        </div>
-        <div class="Background-Image" id="Background-Container">
-            <img class = "BackI" id="backImage" src="">
+    <!-- Textfelder auf dem Meme: Oben, Mitte und Unten -->
+    <div id="rendern">
+        <div class="MemeImageClass" id="Meme">
+            <div class="MemeTextBottom">
+                <p id="MemeTextUnten"></p>
+            </div>
+            <div class="MemeTextTop">
+                <p id="MemeTextOben"></p>
+            </div>
+            <div class="MemeTextMiddle">
+                <p id="MemeTextMitte"></p>
+            </div>
+            
+            <div class="Background-Image" id="Background-Container">
+                <img class = "BackI" id="backImage" src="">
+            </div>
         </div>
     </div>
-
 
     <!-- Voice Controller -->
     <div class="SpeechControl">
         <div class="dropdown">
+            <!-- Start button der Sprach-Kontrolle -->
             <button class="dropbtn" onclick="runSpeechRecognition(0)">VoiceControll 🎤 </button> &nbsp; <span id="action"></span>
+            <!-- Dropdown für Informationen zur Sprachkontrolle -->
             <div class="dropdown-content2">
                 <p>Info:</p>
                 <p>To select a Background: "Set the Background"</p>
@@ -101,10 +111,11 @@
                 <p>To Stop VoiceControll: "stop it please"</p>
             </div>
         </div>
+        <!-- Anzeigetext, um User zu zeigen, dass "zugehört" wird -->
         <div id="output" class="hide"></div>
     </div>
 
-    <!-- Buttons -->
+    <!-- Buttons zum Ein-/Ausblenden des Eingabefeldes -->
 
     <a class="bottomText" onclick="BottomPlusPressed()">&#43;</a>
     <a class="topText" onclick="TopPlusPressed()">&#43;</a>
@@ -113,7 +124,7 @@
     <a class="midText" onclick="MidPlusPressed()">&#43;</a>
     <a class="midTextRemove"onclick="MidMinusPressed()" >&#45;</a>
 
-    <!-- Droppdown for further Enhancements-->
+    <!-- Droppdown mit verschiedenen Möglichkeiten einen Hintergrund zu setzen -->
     <div class="dropdown">
         <button class="dropbtn">Backgrounds</button>
         <div class="dropdown-content">
@@ -126,7 +137,7 @@
         </div>
     </div>
 
-    <!-- Create Image-->
+    <!-- Droppdown mit verschiedenen Möglichkeiten das Bild zu erstellen -->
     <div class="dropdown">
         <button class="dropbtn">Download</button>
         <div class="dropdown-content">
@@ -140,7 +151,7 @@
 
 
 
-    <!-- Cutom URL Image Uploader -->
+    <!-- User kann eigene Bild-URL angeben -->
     <div class ="UploadFormURL">
         <input class ="InputURL" id = "urlinput" placeholder="Input Image URL Here">
         <a class = "UploadButton" onclick="AddImageURLToDatabase()" >
@@ -148,6 +159,7 @@
 
     </div>
 
+    <!-- User kann Screenshot von eingegebener URL machen lassen -->
     <div class ="UploadFormScreenshot">
         <input class ="InputURL" id = "screenshotinput" placeholder="Input Website-URL Here">
         <a class = "UploadButton" onclick="ScreenshotUrl()" >
@@ -155,17 +167,17 @@
 
     </div>
 
-    <!-- Cutom PNG Image Uploader -->
+    <!-- User kann Bild direkt hochladen, wird in _imgurUpload.js behandelt -->
     <div class ="UploadFormImg">
         <div class="dropzone">
             <div class="info"></div>
         </div>
     </div>
 
-
+    <!-- nicht angezeigtes Textfeld für Zwischenablage -->
     <a id="link"></a>
 
-    <!-- Pictures in the Galery and Buttons-->
+    <!-- Bilder in der Gallerie (mit Info-Button) -->
     <div class="ImageGalerie">
         <img class = "GaleryPic" id="G1" src="" style="width:150px" onclick ="updateBackground(1)">
             <button class="info1" onclick="Info(1)">🛈</button>
@@ -180,6 +192,7 @@
         <img class = "GaleryPic" id="G6" src="" style="width:150px" onclick ="updateBackground(6)">
             <button class="info6" onclick="Info(6)">🛈</button>
 
+        <!-- Infofeld mit Information über das Hintergrundbild -->
         <div class="Infos" id="InfoFeld">
             <button class="xbutton" onclick= "xInfo()">x</button>
             <h3>Information:</h3>
@@ -191,17 +204,20 @@
         </div>
 
     </div>
+
+    <!-- Vor/Zurück Button für Bilder die in der Datenbank liegen -->
     <div class="AllButtons">
         <button class="NextImages" onclick=GaleryNext()>&#8250;</button>
         <button class="PreviousImages" onclick=GaleryPrev()>&#8249;</button>
     </div>
+    <!-- Vor/Zurück Button für Bilder die von "ImgFlip" bezogen werden -->
     <div class="APIButtons">
         <button class="NextImages" onclick=GaleryNextAPI()>&#8250;</button>
         <button class="PreviousImages" onclick=GaleryPrevAPI()>&#8249;</button>
     </div>
 
-    <script type="text/javascript" src="_imgurConnect.js"></script>
-    <script type="text/javascript" src="_imgurUpload.js"></script>
+    <script type="text/javascript" src="imgurConnect.js"></script>
+    <script type="text/javascript" src="imgurUpload.js"></script>
     <script src="MemeGen.js" ></script>
 
 </div>

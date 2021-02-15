@@ -6,7 +6,8 @@ const Meme = require('../models/memes');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
+    //ID aus Anfrage filtern
+    //Meme anhand von Meme-ID finden und entfernen
     var memeid = req.query.id+"";
     Meme.findByIdAndDelete(memeid, function(err, result){
 

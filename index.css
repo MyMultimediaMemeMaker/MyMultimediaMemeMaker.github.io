@@ -1,5 +1,7 @@
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap');
 
+/* Backround Settings */
 body {
     background-image: url('https://i.imgur.com/X20ii9K.png');
     background-repeat: no-repeat;
@@ -12,6 +14,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Allgemeine Body Settings */
 body {
     background-color: #fafafa;
     font-family: 'Open Sans', sans-serif;
@@ -19,6 +22,7 @@ body {
     text-align: center;
 }
 
+/*  Settings für Eingabe Form*/
 .Form{
     position: absolute;
     left: 25%;
@@ -33,12 +37,14 @@ body {
     margin-top:2em;
 }
 
+/* Settings für alle Input-Felder */
 input{
     position: absolute;
     left: 150px;
     width: 400px;
 }
 
+/* Settings für User Name und Logo */
 .UserName{
     position: absolute;
     right: 20px;

@@ -7,26 +7,34 @@
     <link rel="stylesheet" href="SingleView.css">
 </head>
 <body>
+<!-- Navigationsmenü -->
 <nav>
     <ul id="M3">
-        <a href="index.html">Home</a>
+        <a href="index.html">Home</a> &nbsp&nbsp&nbsp
+        <a href="help.html">Help</a>&nbsp&nbsp&nbsp
         <a href="Browse.html">Browse</a>
         <a href="SingleView.html">Single View</a>
 
     </ul>
 </nav>
 
+<!-- User Informationen -->
 <a id="UserName3" class="UserName"></a>
 <img src="./data/UserLogo.png" class="UserLogo">
 
+<!-- Überschrift -->
 <h1>Focus on one meme at a time</h1>
 <h3>No distractions - just memes</h3>
+<!-- Filtermenü -->
 <div class="FilterPlace">
+    <!-- Filterbutton -->
     <button onclick="FilterMenu()">Filter ᗊ</button>
+    <!-- aktuell ausgewählte Filter -->
     <a class="Filtered" id="FT"> Test <button class="FilteredX" onclick="RemFilter('Filter')">x</button></a>
     <a class="Filtered" id="FDU"> Date △ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
     <a class="Filtered" id="FDD"> Date ▽ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
     <a class="Filtered" id="FL"> Likes <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <!-- Dropdown mit Filterauswahl -->
     <div class="FilterAuswahl" id="FilterAuswahl">
         Filter: <input class="FilterInput" id="TextFilter" onchange="addFilter('Filter')"><p></p>
         <button class="FilterButton" onclick="addFilter('SL')">Sort by Likes</button> <p></p>
@@ -35,19 +43,21 @@
     </div>
 </div>
 
-
+<!-- Hauptcontainer des Memes (Hardcoded da immer an der selben Stelle) -->
 <div class ="MemeContainer">
+    <!-- User Interaktionen (nur falls eingeloggter Benutzer) -->
     <div class="UserInteraction" id="UserInteraction">
         <div class="UIaPos">
             <button class="Vote" id="UpV" onclick=VoteUp()>▲</button>
             <a class="VoteS" id="UpS" >▲</a>
-            <p id="LikeNumber">+120</p>
+            <p id="LikeNumber">0</p>
             <button class="Vote"  id="DownV" onclick=VoteDown()>▼</button>
             <a class="VoteS"  id="DownS" >▼</a>
             <div class="Red"></div>
             <div class="Green" id="Green"></div>
         </div>
     </div>
+    <!-- Meme und Ersteller Informationen (angepasst über js) -->
     <div id="MemeTitel">Hier steht der Titel des Memes</div>
     <div class="Image">
         <img id="currentImg" src="https://site.groupe-psa.com/content/uploads/sites/9/2016/12/white-background-2-768x450.jpg">
@@ -56,9 +66,10 @@
     <div id="ErstellInfos"> Max Mustermann - 1. Jan 2021 </div>
 
 </div>
-
+<!-- Vorlese Button -->
 <button class="Vorlesen" onclick="ReadTitel()">🔊</button>
 
+<!-- Buttons für Navigation (vor, zurück) und Auto-Play -->
 <div class ="Buttons">
     <button class="SlideshowButton" id="prev" onclick="PrevImg()"> Previous</button>
     <button class="SlideshowButton" id ="nextAp" onclick="AutoPlay()"> Autoplay </button>

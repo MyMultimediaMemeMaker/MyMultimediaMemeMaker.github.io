@@ -6,25 +6,32 @@
     <link rel="stylesheet" href="Browse.css">
 </head>
 <body>
+<!-- Navigationsmenü -->
 <nav>
     <ul id="M2">
-        <a href="index.html">Home</a>
+        <a href="index.html">Home</a> &nbsp&nbsp&nbsp
+        <a href="help.html">Help</a>&nbsp&nbsp&nbsp
         <a href="Browse.html">Browse</a>
         <a href="SingleView.html">Single View</a>
     </ul>
 </nav>
 
-
+<!-- User Informationen oben rechts -->
 <a id="UserName2" class="UserName"></a>
 <img src="./data/UserLogo.png" class="UserLogo">
 
+<!-- Überschrift -->
 <h1>Browse through all the memes</h1>
+<!-- Filtermenü -->
 <div class="FilterPlace">
+    <!-- Filterbutton -->
     <button onclick="FilterMenu()">Filter ᗊ</button>
+    <!-- aktuell ausgewählte Filter -->
     <a class="Filtered" id="FT"> Test <button class="FilteredX" onclick="RemFilter('Filter')">x</button></a>
     <a class="Filtered" id="FDU"> Date △ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
     <a class="Filtered" id="FDD"> Date ▽ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
     <a class="Filtered" id="FL"> Likes <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <!-- Dropdown mit Filterauswahl -->
     <div class="FilterAuswahl" id="FilterAuswahl">
         Filter: <input class="FilterInput" id="TextFilter" onchange="addFilter('Filter')"><p></p>
         <button class="FilterButton" onclick="addFilter('SL')">Sort by Likes</button> <p></p>
@@ -33,10 +40,11 @@
     </div>
 </div>
 
+<!-- Hauptcontainer zum einfügen der Memes -->
 <div class="container" id="container">
-    <!--<div class="blog-post"></div>-->
 </div>
 
+<!-- Ladeanzeige am Ende der Seite -->
 <div class="loading">
    <div class="ball"></div>
    <div class="ball"></div>

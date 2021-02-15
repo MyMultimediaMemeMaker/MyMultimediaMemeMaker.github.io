@@ -1,9 +1,11 @@
+//Generelle Anforderungen
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//Express-Routen anfordern
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var addRouter = require('./routes/add');
@@ -15,8 +17,9 @@ var addlike  = require('./routes/add_like');
 var delMemeRouter  = require('./routes/delete_meme');
 var adddislike  = require('./routes/add_dislike');
 var createMeme = require('./routes/create_meme');
+
+//Mongoose als Brcke zur MongoDB Datenbank initialisieren
 const mongoose = require('mongoose');
-const Meme = require('./models/memes');
 const { ADDRCONFIG } = require('dns');
 
 var app = express();
@@ -32,6 +35,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+//Header für Access-Control setzen
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -46,6 +50,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Routen verlinken
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/add', addRouter);

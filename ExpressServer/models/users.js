@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+//Schema für den Aufbau eines User-Datenbank-Eintrags
 const userSchema = new Schema({
     Name: {
         type: String,

@@ -1,5 +1,7 @@
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap');
 
+/* Backround Settings */
 body {
     background-image: url('https://i.imgur.com/X20ii9K.png');
     background-repeat: no-repeat;
@@ -12,22 +14,26 @@ body {
     box-sizing: border-box;
 }
 
+/* Allgemeine Body Settings */
 body {
     background-color: #fafafa;
     font-family: 'Open Sans', sans-serif;
     padding-bottom: 100px;
 }
 
+/* Settings für Meme Container */
 .container {
     margin: 0 auto;
     max-width: 600px;
 }
 
+/* Größe angezeigter Memes */
 .MemeImages{
     max-width: 430px;
     max-height: 400px;
 }
 
+/* Umschließender Meme Container mit Titel/Author etc. */
 .blog-post {
     background-color: #fff;
     box-shadow: 0px 1px 2px rgba(50, 50, 50, .1),
@@ -36,11 +42,9 @@ body {
     padding: 40px;
     margin: 20px 0;
 }
-
 .title {
     margin: 0;
 }
-
 .text {
     color: #555;
     margin: 20px 0;
@@ -62,6 +66,7 @@ body {
     margin-left: 10px;
 }
 
+/* Settings für die "Loading"-Anzeige */
 .loading {
     opacity: 0;
     display: flex;
@@ -71,11 +76,9 @@ body {
     transform: translateX(-50%);
     transition: opacity .3s ease-in;
 }
-
 .loading.show {
     opacity: 1;
 }
-
 .ball {
     background-color: #777;
     border-radius: 50%;
@@ -84,15 +87,13 @@ body {
     width: 10px;
     animation: jump .5s ease-in infinite;
 }
-
 .ball:nth-of-type(2) {
     animation-delay: 0.1s;
 }
-
 .ball:nth-of-type(3) {
     animation-delay: 0.2s;
 }
-
+/* Animation der drei Bälle */
 @keyframes jump {
     0%, 100% {
         transform: translateY(0);
@@ -102,6 +103,8 @@ body {
         transform: translateY(-10px);
     }
 }
+
+/* User Infos oben rechts */
 .UserName{
     position: absolute;
     right: 20px;
@@ -114,15 +117,16 @@ body {
 
 }
 
+/* Feld für Up / Down Votes */
 .UserInteraction{
     position: relative;
     left: 93%;
     top: -200px;
 }
-
 .UIaPos{
     position: absolute;
 }
+/* Darstellung des "Like"-Verhältnisses */
 .Red, .Green{
     position: absolute;
     left: -15px;
@@ -135,12 +139,13 @@ body {
     height: 100px;
     background-color: forestgreen;
 }
+
+/* Vote Buttons */
 .VoteS, .Vote, .DownVote, .DownS {
     position: absolute;
     left: 7px;
     top: 0px;
 }
-
 .LikeNumber{
     position: absolute;
     top: 25px;
@@ -150,6 +155,7 @@ body {
     top: 80px;
 }
 
+/* Positionierung der Filter-Buttons und generelles Styling */
 .FilterPlace{
     position: absolute;
     left: 510px;

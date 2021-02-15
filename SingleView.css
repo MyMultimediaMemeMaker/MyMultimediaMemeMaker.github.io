@@ -1,5 +1,7 @@
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap');
 
+/* Backround Settings */
 body {
     background-image: url('https://i.imgur.com/X20ii9K.png');
     background-repeat: no-repeat;
@@ -12,6 +14,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Allgemeine Body Settings */
 body {
     background-color: #fafafa;
     font-family: 'Open Sans', sans-serif;
@@ -21,6 +24,7 @@ body {
     text-align: center;
 }
 
+/* aktuell angezeigtes Meme */
 #currentImg{
     height: 400px;
     max-width: 100%;
@@ -34,85 +38,10 @@ body {
     margin: 0 auto;
 }
 
+/* Positionierung der Buttons und Texte */
 #next{
     float: right;
 }
-#prev{
-    float: left;
-}
-#ErstellInfos{
-   text-align: center;
-
-}
-#MemeTitel{
-    text-align: center;
-    font-size: large;
-}
-.Buttons{
-    max-width: 700px;
-    width: 80%;
-    margin: 0 auto;
-}
-.UserName{
-    position: absolute;
-    right: 20px;
-}
-.UserLogo{
-    position: absolute;
-    transform: scale(0.06);
-    right: -360px;
-    top: -370px;
-
-}
-
-.UserInteraction{
-    position: relative;
-    left: 106%;
-}
-
-.UIaPos{
-    position: absolute;
-    top: 160px;
-}@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap');
-
-body {
-    background-image: url('https://i.imgur.com/X20ii9K.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #fafafa;
-    font-family: 'Open Sans', sans-serif;
-    padding-bottom: 100px;
-}
-.Image{
-    text-align: center;
-}
-
-#currentImg{
-    height: 400px;
-    max-width: 100%;
-    align-content: center;
-
-}
-.MemeContainer{
-
-    max-width: 700px;
-    width: 80%;
-    margin: 0 auto;
-}
-
-#next{
-    float: right;
-}
-
 #nextAp, #stopAp{
     position: absolute;
     left: 730px;
@@ -145,6 +74,7 @@ body {
 
 }
 
+/* User Informationen oben rechts */
 .UserInteraction{
     position: relative;
     left: 106%;
@@ -154,6 +84,7 @@ body {
     position: absolute;
     top: 170px;
 }
+/* Vote-Verhätnis */
 .Red, .Green{
     position: absolute;
     left: -15px;
@@ -166,12 +97,13 @@ body {
     height: 100px;
     background-color: forestgreen;
 }
+
+/* Vote-Area */
 .VoteS, .Vote {
     position: absolute;
     left: 7px;
     top: 0px;
 }
-
 #LikeNumber{
     position: absolute;
     top: 25px;
@@ -180,6 +112,8 @@ body {
 #DownV, #DownS{
     top: 80px;
 }
+
+/* Auto-Play Intervall */
 #timer{
     position: absolute;
     left: 800px;

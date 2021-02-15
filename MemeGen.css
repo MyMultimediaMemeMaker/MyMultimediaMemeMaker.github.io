@@ -1,5 +1,7 @@
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap');
 
+/* Backround Settings */
 body {
     background-image: url('https://i.imgur.com/X20ii9K.png');
     background-repeat: no-repeat;
@@ -11,6 +13,8 @@ body {
 * {
     box-sizing: border-box;
 }
+
+/* Allgemeine Body Settings */
 body {
     background-color: #fafafa;
     font-family: 'Open Sans', sans-serif;
@@ -35,7 +39,7 @@ body {
 .Textinput{
     width: 300px;
 }
-.Foramt{
+.Format{
     width: 25px;
 }
 .bottomInput{
@@ -72,7 +76,7 @@ body {
 }
 
 
-/* Hide the images by default */
+/* Per Default werden keine Bilder gezeigt */
 .mySlides {
     display: none;
 }
@@ -99,7 +103,7 @@ body {
     user-select: none;
 
 }
-/* Position the "top button" to the top right */
+/* Positionierung der Texteingabe-Buttons */
 .topText, .topTextRemove {
     position: absolute;
     left: 610px;
@@ -117,7 +121,6 @@ body {
     border-radius: 3px 3px 3px 3px;
 }
 
-/* Position the "bottom button" to the bottom right */
 .bottomText, .bottomTextRemove {
     position: absolute;
     left: 610px;
@@ -127,7 +130,7 @@ body {
 
 }
 
-/* On hover, add a black background color with a little bit see-through */
+/* Bei Hover wird der Button farbig. Grün für Texteingabe, rot für Löschen */
 .bottomText:hover, .topText:hover, .midText:hover {
     background-color: lightgreen;
 }
@@ -136,7 +139,7 @@ body {
 }
 
 /* Auswahlmenü */
-
+/* Menü-Buttons*/
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -148,7 +151,7 @@ body {
 }
 
 
-/* The container <div> - needed to position the dropdown content */
+/* Positionierung des Inhalts von Dropdown-Menüs */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -156,7 +159,7 @@ body {
 }
 
 
-/* Dropdown Content (Hidden by Default) */
+/* Dropdown Inhalt (Per Default unsichtbar) */
 .dropdown-content, .dropdown-content2 {
     display: none;
     position: absolute;
@@ -168,7 +171,7 @@ body {
 .dropdown-content2{
     min-width: 400px;
 }
-    /* Links inside the dropdown */
+/* Links im Dropdown */
 .dropdown-content a {
     color: black;
     padding: 5px 5px;
@@ -180,21 +183,20 @@ body {
     padding: 5px 5px;
     text-decoration: none;
     line-height: 0px;
-
 }
 
 
-/* Change color of dropdown links on hover */
+/* Links im Dropdown ändern Farbe beim Hovern */
 .dropdown-content a:hover {background-color: #DDDDDD}
 
-/* Show the dropdown menu on hover */
+/* Dropdown-Menü wird beim Hovern angezeigt */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 .dropdown:hover .dropdown-content2 {
     display: block;
 }
-/* Change the background color of the dropdown button when the dropdown content is shown */
+/* Menü-Buttons */
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
@@ -467,3 +469,6 @@ body {
 }
 
 
+#rendern{
+    position: absolute;
+}

@@ -6,7 +6,9 @@ const Meme = require('../models/memes');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+        //Neues Meme-Object nach Meme-Model erstellen
         const meme = new Meme({
+            //Angaben aus Request extrahieren
             Url: req.query.url,
             Preset: req.query.preset,
             Titel: req.query.titel,
@@ -17,6 +19,7 @@ router.get('/', function(req, res, next) {
             Public: req.query.public
 
         });
+        //Erstelltes Meme der Datenbank hinzufügen
         meme.save()
             .then((result) => {
                 res.send(result)

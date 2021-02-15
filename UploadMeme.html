@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="UploadMeme.css">
 </head>
 <body>
+    <!-- Navigationsmenü -->
     <nav>
         <ul id="M5">
-            <a href="index.html">Home</a>
+            <a href="index.html">Home</a> &nbsp&nbsp&nbsp
+            <a href="help.html">Help</a>&nbsp&nbsp&nbsp
             <a href="Browse.html">Browse</a>
             <a href="SingleView.html">Single View</a>
             <a href="MeemeGen.html">MemeGenerator</a>
@@ -18,34 +20,46 @@
         </ul>
     </nav>
 
+    <!-- User Informationen -->
     <a id="UserName5" class="UserName"></a>
     <img src="./data/UserLogo.png" class="UserLogo">
 
+    <!-- Überschrift -->
     <h1>Upload and share your Memes here!</h1>
 
+    <!-- Text Eingabe für Meme Titel -->
     <input id="Titel" placeholder="Input the Meme Titel here">
+    <!-- Spracheingabe für Meme Titel -->
     <div class="spracheingabe">
         <button class="Dictate" onclick="Dictate()">🎤</button> <span id="action"></span>
     </div>
+    <!-- Fügt das Meme der Datenbank hinzu! -->
     <button class="Submit" onclick="Submit()">Submit</button>
 
+    <!-- Bereich zum hochladen des Memes. Wird im "_imgurUploadMemes.js" weiter behandelt. -->
     <div class ="UploadFormImg">
+        <!-- Drag and Drop bereich für das Hochladen eines Memes-->
         <div class="dropzone">
             <div class="info"></div>
         </div>
     </div>
+    <!-- Link zum hochgeladenen Bild -->
     <a href="#" id="MemeLink">Your link will appear here.</a> <button class="Share" style="font-size:12px" onclick="CopyClip()"> <i class="fa fa-share-alt"></i></button>
 
+    <!-- Container zur Anzeige von eigenen bereits hochgeladenen Memes -->
     <div class="MyMemes" id="container">
         <h2>Your Previous Memes:</h2>
 
     </div>
 
+    <!-- Ladeanzeige am Ende der Seite -->
     <div class="loading">
         <div class="ball"></div>
         <div class="ball"></div>
         <div class="ball"></div>
     </div>
+
+    <!-- Auswahl zwischen "public" und "private" für das hochzuladende Meme -->
     <a class = "PubPriv">Public &nbsp &nbsp &nbsp &nbsp &nbsp Private</a>
     <div class ="BlueSwitch">
         <label class="switch">
@@ -56,7 +70,7 @@
 
 
     <script type="text/javascript" src="UploadMeme.js"></script>
-    <script type="text/javascript" src="_imgurConnect.js"></script>
-    <script type="text/javascript" src="_imgurUploadMemes.js"></script>
+    <script type="text/javascript" src="imgurConnect.js"></script>
+    <script type="text/javascript" src="imgurUploadMemes.js"></script>
 </body>
 </html>

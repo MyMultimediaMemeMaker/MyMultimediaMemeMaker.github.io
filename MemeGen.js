@@ -259,6 +259,12 @@ function updateBackground(index){
     if(index==4) document.getElementById("backImage").src = document.getElementById("G4").src;
     if(index==5) document.getElementById("backImage").src = document.getElementById("G5").src;
     if(index==6) document.getElementById("backImage").src = document.getElementById("G6").src;
+    //blendet Galerie aus
+    AllGalButtons[0].style.display = "none";
+    APIGalButtons[0].style.display = "none";
+    galeryContainer[0].style.display = "none";
+    // blendet die Info-Buttons über den einzelnen Bildern aus
+    showinfo(false);
 
     // lädt die ID des gewählten Hintergrundbildes
     var memeid = memebyindex(index)._id;

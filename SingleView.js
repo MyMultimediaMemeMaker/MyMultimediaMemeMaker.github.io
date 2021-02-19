@@ -243,7 +243,8 @@ function ReadTitel(){
     // stelle Sprache auf Englisch
     msg.lang = 'en-US';
     // Text, welcher vorgelesen werden soll
-    msg.text = document.getElementById("MemeTitel").innerText;
+    console.log(memes[index]);
+    msg.text = "Titel: "+memes[index].Titel+". Description: "+ memes[index].Description+". Author: "+memes[index].Autor;
     // lese Text vor
     window.speechSynthesis.speak(msg);
 }

@@ -14,11 +14,12 @@ loadImageUrls();
 function AddMemeToDatabase(link){
     // bekomme die Meme Informationen aus dem html
     var Titel = document.getElementById("Titel").value;
+    var description = document.getElementById("description").value;
     var Autor = sessionStorage.getItem('User');
     var uid = sessionStorage.getItem('UserID');
     var pub = !document.getElementById("pub").checked;
     // sende Anfrage an den Server und übergebe Informationen
-    let request = "http://localhost:3000/add?url=" + link+"&preset=false"+"&titel="+Titel+"&autor="+Autor+"&uid="+uid+"&public="+pub;
+    let request = "http://localhost:3000/add?url=" + link+"&preset=false"+"&titel="+Titel+"&autor="+Autor+"&uid="+uid+"&public="+pub+"&description="+description;
     //console.log(request);
     let XMLHTTP = new XMLHttpRequest();
     XMLHTTP.open("GET",request);
@@ -45,12 +46,12 @@ function AddMemeToDatabase(link){
 // Löst das Hochaden aus
 function Submit(){
     // Überprüfung ob alle Eingaben gesetzt sind
-    if(document.getElementById("Titel").value.length>0 && document.getElementById("MemeLink").innerText !="Your link will appear here."){
+    if(document.getElementById("description").value.length>0 &&  document.getElementById("Titel").value.length>0 && document.getElementById("MemeLink").innerText !="Your link will appear here."){
         // Füge das Meme der Datenbank hinzu
         AddMemeToDatabase(document.getElementById("MemeLink").innerText);
     }
     else{
-        window.alert("Please make sure, a Meme-Title as well as a Meme-Image is provided.");
+        window.alert("Please make sure, a Meme-Title, Meme-Description as well as a Meme-Image is provided.");
     }
 }
 
@@ -170,9 +171,10 @@ function delImg(memeid){
 }
 
 // Diktier-Funktionalität
-function Dictate(){
+function Dictate(num){
     // hole die Referenz auf das "action"-Element
-    var action = document.getElementById("action");
+    if(num==1) var action = document.getElementById("action");
+    if(num==2) var action = document.getElementById("action2");
     // generiere neues SpeechRecognition Objekt
     var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
     var recognition = new SpeechRecognition();
@@ -191,7 +193,8 @@ function Dictate(){
     recognition.onresult = function(event) {
         var transcript = event.results[0][0].transcript;
         console.log(transcript);
-        document.getElementById("Titel").value = transcript;
+        if(num==1)        document.getElementById("Titel").value = transcript;
+        if(num==2)        document.getElementById("description").value = transcript;
 
     };
 

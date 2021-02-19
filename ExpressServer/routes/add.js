@@ -16,7 +16,8 @@ router.get('/', function(req, res, next) {
             CreatorID: req.query.uid,
             Likes:[],
             Dislikes:[],
-            Public: req.query.public
+            Public: req.query.public,
+            Description: req.query.description
 
         });
         //Erstelltes Meme der Datenbank hinzufügen

@@ -23,6 +23,10 @@ const memeSchema = new Schema({
         type: String,
         required: false
     },
+    Description:{
+        type: String,
+        required: false
+    },
     Public:{
         type: Boolean,
         required: false

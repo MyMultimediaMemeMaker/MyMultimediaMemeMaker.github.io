@@ -35,6 +35,7 @@ body {
     left: 650px;
     top: 13px;
     width: 500px;
+    z-index:5;
 }
 .Textinput{
     width: 300px;

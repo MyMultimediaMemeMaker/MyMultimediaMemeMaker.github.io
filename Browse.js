@@ -156,7 +156,7 @@ function addDataToDOM(data) {
             VoteText = "+"+VoteText
         }
         // Erstelle html Elemement für den Meme Post bestehend aus: 1. Vorlese-Button, 2. Title des Memes, 3. Meme-Bild, 4. Benutzer Information, 5. User Interaktionen (alle haben eine eindeutige, dem Meme zugeordnete ID!), 5.1. Vote-Buttons, 5.2. Vote-Text, 5.3. Rot-Grüner Vote-Verältnis-Button
-        var htmlImage = "<button class=\"Vorlesen\" onclick=\"ReadTitel('"+data.Titel+"')\">🔊</button> <h2 class=\"title\">"+data.Titel+"</h2> <img class = \"MemeImages\" src="+data.Url+"> <div class=\"user-info\"><span>"+data.Autor+"</span></div> <div class=\"UserInteraction\" id=\"UserInteraction"+ImgId+"\"> <div class=\"UIaPos\"> <button class=\"Vote\" id=\"UpV"+ImgId+"\" onclick= VoteUp(\""+ImgId+"\")>▲</button> <a class=\"VoteS\" id=\"UpS"+ImgId+"\" >▲</a> <p class=\"LikeNumber\" id=\"LikeNumber"+ImgId+"\">"+VoteText+"</p> <button class=\"DownVote\"  id=\"DownV"+ImgId+"\" onclick=VoteDown(\""+ImgId+"\")>▼</button> <a class=\"DownS\"  id=\"DownS"+ImgId+"\" >▼</a> <div class=\"Red\"></div> <div class=\"Green\" id=\"Green"+ImgId+"\"></div> </div> </div>";
+        var htmlImage = "<button class=\"Vorlesen\" onclick=\"ReadTitel('"+ImgId+"')\">🔊</button> <h2 class=\"title\">"+data.Titel+"</h2> <img class = \"MemeImages\" src="+data.Url+"> <div class=\"user-info\"><span>"+data.Autor+"</span></div> <div class=\"UserInteraction\" id=\"UserInteraction"+ImgId+"\"> <div class=\"UIaPos\"> <button class=\"Vote\" id=\"UpV"+ImgId+"\" onclick= VoteUp(\""+ImgId+"\")>▲</button> <a class=\"VoteS\" id=\"UpS"+ImgId+"\" >▲</a> <p class=\"LikeNumber\" id=\"LikeNumber"+ImgId+"\">"+VoteText+"</p> <button class=\"DownVote\"  id=\"DownV"+ImgId+"\" onclick=VoteDown(\""+ImgId+"\")>▼</button> <a class=\"DownS\"  id=\"DownS"+ImgId+"\" >▼</a> <div class=\"Red\"></div> <div class=\"Green\" id=\"Green"+ImgId+"\"></div> </div> </div>";
         // füge Element in die html Seite ein
         postElement.innerHTML = htmlImage;
         container.appendChild(postElement);
@@ -216,7 +216,7 @@ function addDataToDOM(data) {
         // Füge neuem Post einen Blog-Post hinzu (weißes Feld um Meme / umschließender Meme Container)
         postElement.classList.add('blog-post');
         // Erstelle html Elemement für den Meme Post bestehend aus: 1. Vorlese-Button, 2. Title des Memes, 3. Meme-Bild, 4. Benutzer Information
-        var htmlImage = "<button class=\"Vorlesen\" onclick=\"ReadTitel('"+data.Titel+"')\">🔊</button> <h2 class=\"title\">"+data.Titel+"</h2> <img class = \"MemeImages\" src="+data.Url+"> <div class=\"user-info\"><span>"+data.Autor+"</span></div>";
+        var htmlImage = "<button class=\"Vorlesen\" onclick=\"ReadTitel('"+data._id+"')\">🔊</button> <h2 class=\"title\">"+data.Titel+"</h2> <img class = \"MemeImages\" src="+data.Url+"> <div class=\"user-info\"><span>"+data.Autor+"</span></div>";
         // füge Element in die html Seite ein
         postElement.innerHTML = htmlImage;
         loading.classList.remove('show');
@@ -322,14 +322,15 @@ function UpdateBarnNumber(memeid){
 }
 
 // Lese den Meme Titel vor
-function ReadTitel(text){
+function ReadTitel(memeid){
+    var meme = memes.find(({_id}) => _id == memeid);
     //console.log(text);
     // generiere neues Vorlese-Objekt
     var msg = new SpeechSynthesisUtterance();
     // stelle Sprache auf Englisch
     msg.lang = 'en-US';
     // Text, welcher vorgelesen werden soll
-    msg.text = text;
+    msg.text = "Titel: "+meme.Titel+". Description: "+ meme.Description+". Author: "+meme.Autor;
     // lese Text vor
     window.speechSynthesis.speak(msg);
 }

@@ -29,9 +29,15 @@
 
     <!-- Text Eingabe für Meme Titel -->
     <input id="Titel" placeholder="Input the Meme Titel here">
+    <!-- Text Eingabe für Beschreibung-->
+    <textarea cols="40" rows="5" id="description" placeholder="Please giv a description of the meme, containing the caption(s) and what there is to see in the picture."></textarea>
     <!-- Spracheingabe für Meme Titel -->
     <div class="spracheingabe">
-        <button class="Dictate" onclick="Dictate()">🎤</button> <span id="action"></span>
+        <button class="Dictate" onclick="Dictate(1)">🎤</button> <span id="action"></span>
+    </div>
+    <!-- Spracheingabe für Meme Beschribung -->
+    <div class="spracheingabe2">
+        <button class="Dictate" onclick="Dictate(2)">🎤</button> <span id="action2"></span>
     </div>
     <!-- Fügt das Meme der Datenbank hinzu! -->
     <button class="Submit" onclick="Submit()">Submit</button>

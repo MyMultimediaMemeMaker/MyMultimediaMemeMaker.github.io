@@ -34,9 +34,13 @@
     <a class="Filtered" id="FDU"> Date △ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
     <a class="Filtered" id="FDD"> Date ▽ <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
     <a class="Filtered" id="FL"> Likes <button class="FilteredX" onclick="RemFilter('Sort')">x</button></a>
+    <a class="Filtered" id="FImg"> Images <button class="FilteredX" onclick="RemFilter('Type')">x</button></a>
+    <a class="Filtered" id="FGIF"> GIFs <button class="FilteredX" onclick="RemFilter('Type')">x</button></a>
+    <a class="Filtered" id="FVid"> Videos <button class="FilteredX" onclick="RemFilter('Type')">x</button></a>
     <!-- Dropdown mit Filterauswahl -->
     <div class="FilterAuswahl" id="FilterAuswahl">
         Filter: <input class="FilterInput" id="TextFilter" onchange="addFilter('Filter')"><p></p>
+        File type: <button class = "FyleTypeButton" onclick="addFilter('SImg')">Image</button><button class = "FyleTypeButton" onclick="addFilter('SGIF')">GIF</button><button class = "FyleTypeButton" onclick="addFilter('SVid')">Video</button> <p></p>
         <button class="FilterButton" onclick="addFilter('SL')">Sort by Likes</button> <p></p>
         <button class="FilterButton" onclick="addFilter('SDN')">Sort by Date (new)</button> <p></p>
         <button class="FilterButton" onclick="addFilter('SDO')">Sort by Date (old)</button>

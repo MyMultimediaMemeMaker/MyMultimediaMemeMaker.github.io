@@ -70,7 +70,7 @@ function SignUp(){
         }
         else{ // alle Eingabe Felder sind gesetzt
             // schicke SignIn Anfrage
-            let request = "http://localhost:3000/add_user?name="+Name+"&mail="+Mail+"&pw="+PW1+"&admin=false";
+            let request = "https://mymultimediamememaker.herokuapp.com/add_user?name="+Name+"&mail="+Mail+"&pw="+PW1+"&admin=false";
             //console.log(request);
             let XMLHTTP = new XMLHttpRequest();
             XMLHTTP.open("GET",request);
@@ -105,7 +105,7 @@ function SignIn(){
     var pw =document.getElementById("pwL").value;
     // Hole Liste aller User, welche auf dem Server registriert sind
     let XMLHTTP = new XMLHttpRequest();
-    XMLHTTP.open("GET","http://localhost:3000/get_users");
+    XMLHTTP.open("GET","https://mymultimediamememaker.herokuapp.com/get_users");
     XMLHTTP.addEventListener("readystatechange",function() {
         // Bei Erfolg >> Schaue ob User existiert
         if (XMLHTTP.readyState == 4) {

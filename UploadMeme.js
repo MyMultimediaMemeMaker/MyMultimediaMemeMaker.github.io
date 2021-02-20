@@ -19,7 +19,7 @@ function AddMemeToDatabase(link){
     var uid = sessionStorage.getItem('UserID');
     var pub = !document.getElementById("pub").checked;
     // sende Anfrage an den Server und übergebe Informationen
-    let request = "http://localhost:3000/add?url=" + link+"&preset=false"+"&titel="+Titel+"&autor="+Autor+"&uid="+uid+"&public="+pub+"&description="+description;
+    let request = "https://mymultimediamememaker.herokuapp.com/add?url=" + link+"&preset=false"+"&titel="+Titel+"&autor="+Autor+"&uid="+uid+"&public="+pub+"&description="+description;
     //console.log(request);
     let XMLHTTP = new XMLHttpRequest();
     XMLHTTP.open("GET",request);
@@ -83,7 +83,7 @@ function CopyClip(){
 // Lade alle Memes
 function loadImageUrls() {
     let XMLHTTP = new XMLHttpRequest();
-    XMLHTTP.open("GET","http://localhost:3000/get_memes");
+    XMLHTTP.open("GET","https://mymultimediamememaker.herokuapp.com/get_memes");
     XMLHTTP.addEventListener("readystatechange",function() {
         // Bei Erfolg
         if (XMLHTTP.readyState == 4) {
@@ -151,7 +151,7 @@ function addDataToDOM(data) {
 // löscht das Bild mit der angegebenen MemeID
 function delImg(memeid){
     // sendet Lösch-Anfrage an den Server
-    let request = "http://localhost:3000/delete_meme?id="+memeid;
+    let request = "https://mymultimediamememaker.herokuapp.com/delete_meme?id="+memeid;
     //console.log(request);
     let XMLHTTP = new XMLHttpRequest();
     XMLHTTP.open("GET",request);

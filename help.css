@@ -3,7 +3,7 @@ body {
     background-image: url('https://i.imgur.com/X20ii9K.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size:auto;
     font-family: "Roboto";
 }
 
@@ -19,6 +19,15 @@ p{
     max-width: 800px;
     font-family:"Roboto";
     font-weight: bold;
+}
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0; margin-left: -10px}
+    100%  {opacity: 1; margin-left: 0px}
 }
 
 .info{

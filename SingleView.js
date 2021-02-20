@@ -22,7 +22,7 @@ if(sessionStorage.getItem('Guest')=="1"){
 function getMemes(){
         // hole komplette Meme-Liste vom Server
         let XMLHTTP = new XMLHttpRequest();
-        XMLHTTP.open("GET","http://localhost:3000/get_memes");
+        XMLHTTP.open("GET","https://mymultimediamememaker.herokuapp.com/get_memes");
         XMLHTTP.addEventListener("readystatechange",function() {
             // Falls Erfolgreich
             if (XMLHTTP.readyState == 4) {
@@ -56,6 +56,9 @@ function getMemes(){
                     console.log("Filter by Keyword: "+keyword);
                     memes = memes.filter(m => m.Titel.indexOf(keyword)>-1);
                 }
+                if( sessionStorage.getItem('Type')=="Img"){}
+                if( sessionStorage.getItem('Type')=="GIF"){memes=[]}
+                if( sessionStorage.getItem('Type')=="Vid"){memes=[]}
                 //console.log(memes);
                 // angezeigtes Bild wird gesetzt
                 ImgContainer.src =memes[index].Url;
@@ -165,7 +168,7 @@ function VoteUp(){
     // rufe die Seite "add_like" auf und füge UserID die likeid und memeid hinzu, damit der Server die Informationen dem richtigen User zuordnen kann
     var likeid = sessionStorage.getItem('UserID');
     var memeid = memes[index]._id;
-    let request = "http://localhost:3000/add_like?memeid="+memeid+"&likeid="+likeid;
+    let request = "https://mymultimediamememaker.herokuapp.com/add_like?memeid="+memeid+"&likeid="+likeid;
 
     let XMLHTTP = new XMLHttpRequest();
     XMLHTTP.open("GET",request);
@@ -188,7 +191,7 @@ function VoteUp(){
 function VoteDown(){
     var likeid = sessionStorage.getItem('UserID');
     var memeid = memes[index]._id;
-    let request = "http://localhost:3000/add_dislike?memeid="+memeid+"&likeid="+likeid;
+    let request = "https://mymultimediamememaker.herokuapp.com/add_dislike?memeid="+memeid+"&likeid="+likeid;
 
     let XMLHTTP = new XMLHttpRequest();
     XMLHTTP.open("GET",request);
@@ -269,6 +272,9 @@ function RemFilter(text){
     if(text=='Filter'){
         sessionStorage.setItem('Filter',"");
     }
+    if(text=='Type'){
+        sessionStorage.setItem('Type',"");
+    }
     // lade Seite neu um Änderungen anzuzeigen
     location.reload();
 }
@@ -292,6 +298,16 @@ function addFilter(text){
     if(text=='SDO'){
         sessionStorage.setItem('Sort', "dateO");
     }
+    //Sortieren Nach Typ
+    if(text=='SImg'){
+        sessionStorage.setItem('Type', "Img");
+    }
+    if(text=='SGIF'){
+        sessionStorage.setItem('Type', "GIF");
+    }
+    if(text=='SVid'){
+        sessionStorage.setItem('Type', "Vid");
+    }
     // lade Seite neu um Änderungen anzuzeigen
     location.reload();
 }
@@ -305,6 +321,9 @@ function showRelevantFilters(){
     document.getElementById("FDU").style.display = "none";
     document.getElementById("FL").style.display = "none";
     document.getElementById("FDD").style.display = "none";
+    document.getElementById("FImg").style.display = "none";
+    document.getElementById("FGIF").style.display = "none";
+    document.getElementById("FVid").style.display = "none";
     // blende gesetzte Filter ein
     if(sessionStorage.getItem('Filter')!=""){
         document.getElementById("FT").style.display = "inline";
@@ -317,5 +336,14 @@ function showRelevantFilters(){
     }
     if(sessionStorage.getItem('Sort')=="dateO"){
         document.getElementById("FDU").style.display = "inline";
+    }
+    if(sessionStorage.getItem('Type')=="Img"){
+        document.getElementById("FImg").style.display = "inline";
+    }
+    if(sessionStorage.getItem('Type')=="GIF"){
+        document.getElementById("FGIF").style.display = "inline";
+    }
+    if(sessionStorage.getItem('Type')=="Vid"){
+        document.getElementById("FVid").style.display = "inline";
     }
 }

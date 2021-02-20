@@ -54,7 +54,7 @@ function StartConfig(){
 // füge Bild der Hintergrundbild-Datenbank hinzu
 function AddImageURLToDatabase(){
     // Anfrage an den Server (Route "add"). Übergebe "preset" = true (definiert Bild als Hintergrundbild)
-    let request = "http://localhost:3000/add?url=" + document.getElementById("urlinput").value+"&preset=true";
+    let request = "https://mymultimediamememaker.herokuapp.com/add?url=" + document.getElementById("urlinput").value+"&preset=true";
     let XMLHTTP = new XMLHttpRequest();
     XMLHTTP.open("GET",request);
     XMLHTTP.setRequestHeader('Content-Type', 'text/plain')
@@ -87,7 +87,7 @@ function UploadImageImg(){
 // beziehe alle Hintergrundbilder vom Server
 function loadImageUrls() {
     let XMLHTTP = new XMLHttpRequest();
-    XMLHTTP.open("GET","http://localhost:3000/get_backgrounds");
+    XMLHTTP.open("GET","https://mymultimediamememaker.herokuapp.com/get_backgrounds");
     XMLHTTP.addEventListener("readystatechange",function() {
         // Bei Erfolg:
         if (XMLHTTP.readyState == 4) {
@@ -271,7 +271,7 @@ function updateBackground(index){
     // "likes" entspricht hier der Anzahl, wie oft ein Hintergrund als Memehintergrund ausgewählt wurde
     var likeid = "1";
     // Auswahl dem Server über "add_like" mitteilen
-    let request = "http://localhost:3000/add_like?memeid="+memeid+"&likeid="+likeid;
+    let request = "https://mymultimediamememaker.herokuapp.com/add_like?memeid="+memeid+"&likeid="+likeid;
 
     let XMLHTTP = new XMLHttpRequest();
     XMLHTTP.open("GET",request);
@@ -396,7 +396,7 @@ function CreateClient(){
     //Disliked wurde mit diesem Hintergrund generiert.
     var memeid = memebyurl(document.getElementById("backImage").src)._id;
     var dislikeid = "1";
-    let request = "http://localhost:3000/add_dislike?memeid="+memeid+"&likeid="+dislikeid;
+    let request = "https://mymultimediamememaker.herokuapp.com/add_dislike?memeid="+memeid+"&likeid="+dislikeid;
     
     //Dem Expres-Server wird mitgeteit, dass das Meme mit diesem Hintergrund erstellt wurde
     let XMLHTTP = new XMLHttpRequest();
@@ -455,7 +455,7 @@ function CreateServer(){
     var text2 = document.getElementById('MemeTextMitte');
     var text3 = document.getElementById('MemeTextUnten');
     //Request an Server erstellen. Texte und Hintergrundbild angeben
-    let request = "http://localhost:3000/create_meme?text1="+text1.innerText+"&text2="+text2.innerText+"&text3="+text3.innerText+"&url="+document.getElementById("backImage").src;
+    let request = "https://mymultimediamememaker.herokuapp.com/create_meme?text1="+text1.innerText+"&text2="+text2.innerText+"&text3="+text3.innerText+"&url="+document.getElementById("backImage").src;
     //Positionierung der Texte
     request +="&t2left=0&t1left="+t1left+"&t3left="+t3left;
     //Formatierung bekommen für 1,2 und 3

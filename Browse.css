@@ -195,3 +195,11 @@ body {
 a.Filtered{
     padding-left: 10px;
 }
+
+.FyleTypeButton{
+    background: none;
+    border: none;
+}
+.FyleTypeButton:hover{
+    background-color: lightgray;
+}

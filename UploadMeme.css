@@ -311,5 +311,23 @@ input:checked + .slider:before {
 }
 .Dictate{
     height: 27px;
+}
 
+.memepreview{
+    position: absolute;
+    left: 110px;
+    top: 420px;
+    max-height: 150px;
+    max-width: 150px;
+
+}
+.shares{
+    position: absolute;
+    top: 390px;
+    left:110px;
+    display: none;
+}
+.socialmedia{
+    width: 20px;
+    height: 20px;
 }

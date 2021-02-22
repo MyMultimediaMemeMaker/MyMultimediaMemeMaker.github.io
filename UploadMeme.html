@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8", content="width=device-width, initial-scale=1.25, user-scalable=no">
     <title>Upload your Meme here</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,9 +28,9 @@
     <h1>Upload and share your Memes here!</h1>
 
     <!-- Text Eingabe für Meme Titel -->
-    <input id="Titel" placeholder="Input the Meme Titel here">
+    <input id="Titel" placeholder="Input the Meme title here">
     <!-- Text Eingabe für Beschreibung-->
-    <textarea cols="40" rows="5" id="description" placeholder="Please giv a description of the meme, containing the caption(s) and what there is to see in the picture."></textarea>
+    <textarea cols="40" rows="5" id="description" placeholder="Please give a description of the meme, containing the caption(s) and what there is to see in the picture."></textarea>
     <!-- Spracheingabe für Meme Titel -->
     <div class="spracheingabe">
         <button class="Dictate" onclick="Dictate(1)">🎤</button> <span id="action"></span>
@@ -51,11 +51,18 @@
     </div>
     <!-- Link zum hochgeladenen Bild -->
     <a href="#" id="MemeLink">Your link will appear here.</a> <button class="Share" style="font-size:12px" onclick="CopyClip()"> <i class="fa fa-share-alt"></i></button>
-
+    <img src=""  class="memepreview" id="memepreview">
     <!-- Container zur Anzeige von eigenen bereits hochgeladenen Memes -->
     <div class="MyMemes" id="container">
         <h2>Your Previous Memes:</h2>
 
+    </div>
+    <div class="shares" id="shares">
+        <img class = "socialmedia" src="./img/Download.png" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+document.getElementById('MemeLink').innerText);"> &nbsp
+        <img class = "socialmedia" src="./img/Twitter_bird_logo_2012.svg.png" onclick="window.open('https://twitter.com/share?url='+document.getElementById('MemeLink').innerText);">&nbsp
+        <img class = "socialmedia" src="./img/iDdntscPf-nfWKqzHRGFmhVxZm4hZgaKe5oyFws-yzA.png" onclick="window.open('https://reddit.com/submit?url='+document.getElementById('MemeLink').innerText);">&nbsp
+        <img class = "socialmedia" src="./img/2000px-WhatsApp.svg.png" onclick="window.open('https://web.whatsapp.com/send?text='+document.getElementById('MemeLink').innerText);">&nbsp
+        <img class = "socialmedia" src="./img/button_share-512.webp" onclick="CopyClip()">
     </div>
 
     <!-- Ladeanzeige am Ende der Seite -->

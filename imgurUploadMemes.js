@@ -3,9 +3,11 @@ var feedback = function(res) {
         var get_link = res.data.link.replace(/^http:\/\//i, 'https://');//Hochgeladenes Bild in URL umwandeln
         console.log(get_link);
         var urlfield = document.getElementById("MemeLink");
+        var memefield = document.getElementById("memepreview");
         urlfield.innerText = get_link; //Link in Textfeld einsetzen
         urlfield.href=get_link; //href entsprechend anpassen
-        document.getElementsByClassName("Share")[0].style.display="inline"; //Nach Erhalten der URL Share-Button einblenden
+        memefield.src = get_link; //Meme preview anzeigen
+        document.getElementById("shares").style.display="inline"; //Nach Erhalten der URL Share-Button einblenden
 
     }
 };

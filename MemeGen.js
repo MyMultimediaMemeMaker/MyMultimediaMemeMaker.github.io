@@ -455,7 +455,7 @@ function CreateServer(){
     var text2 = document.getElementById('MemeTextMitte');
     var text3 = document.getElementById('MemeTextUnten');
     //Request an Server erstellen. Texte und Hintergrundbild angeben
-    let request = "https://mymultimediamememaker.herokuapp.com/create_meme?text1="+text1.innerText+"&text2="+text2.innerText+"&text3="+text3.innerText+"&iimgurl="+document.getElementById("backImage").src;
+    let request = "https://mymultimediamememaker.herokuapp.com/create_meme?text1="+text1.innerText+"&text2="+text2.innerText+"&text3="+text3.innerText+"&imgurl="+document.getElementById("backImage").src;
     //Positionierung der Texte
     request +="&t2left=0&t1left="+t1left+"&t3left="+t3left;
     //Formatierung bekommen für 1,2 und 3
